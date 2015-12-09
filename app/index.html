@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery-numbersOnly</title>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="build/style.min.css">
+	<script src="build/jQuery.numbersOnly.min.js"></script>
+	
+	<script>
+	$(function() {
+	    // Demo 1
+	    $("#demo1").numbersOnly();
+
+
+	    // Demo 2
+	    var status = "off";
+	    $('.demo2_switch').change(function() {
+	        if ($(this).is(":checked")) {
+	            status = "on";
+	        } else {
+	            status = "off";
+	        }
+	        $("#demo2").numbersOnly({
+	            turn: status
+	        });
+	    });
+
+	});//$(function() {
+	</script>
+</head>
+<body>
+	<h1>jQuery numbers only Plugin</h1>
+	<form>
+		<!-- DEMO 1 -->
+	  	<input type="text" name="demo1" class="inpt" id="demo1" required autocomplete="off" />
+	  	<label for="demo1"><span>Only Numbers Allowed.</span></label>
+	  	
+		<br /><br />
+		<!-- DEMO 1 -->
+	  	<input type="text"  name="demo2" class="inpt" id="demo2" required autocomplete="off" />
+	  	<label for="demo2"><span>Toggle Only Number with Button Below</span></label>
+	  	
+	  	
+	  	<div class="onoffswitch">
+		    <input type="checkbox" name="onoffswitch" class="demo2_switch onoffswitch-checkbox" id="myonoffswitch" >
+		    <label class="onoffswitch-label" for="myonoffswitch"></label>
+		</div>
+	</form>
+
+	<a class="button blue viewSource">View Source code</a>
+	<script>
+	// BTN to View Source
+	$("body").on("click", ".viewSource", function(){
+		$("body").fadeOut("slow", function(){
+			window.location="view-source:" + window.location.href;
+		});
+	});
+	</script>
+</body>
+</html>
