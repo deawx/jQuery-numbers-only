@@ -8,6 +8,10 @@ var minifyCSS = require('gulp-minify-css');
 var opn = require('opn');
 var embedlr = require('gulp-embedlr');
 var imagemin = require('gulp-imagemin');
+var server = {
+    host: 'localhost',
+    port: '8080'
+}
 gulp.task('scripts', function() {
     return gulp.src(['app/js/*.js']).pipe(uglify({
         "preserveComments": "all"
